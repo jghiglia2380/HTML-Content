@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PFL Academy: Sales Presentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .slide {
+      height: 100vh;
+      overflow: hidden;
+      display: none;
+    }
+    
+    .active-slide {
+      display: flex;
+    }
+    
+    .pfl-gradient {
+      background: linear-gradient(to right, #4f46e5, #9333ea);
+    }
+    
+    .grid-pattern {
+      background-image: linear-gradient(to right, rgba(147, 51, 234, 0.2) 1px, transparent 1px), 
+                        linear-gradient(to bottom, rgba(147, 51, 234, 0.2) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    
+    .slide-number {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .navigation {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 50;
+      display: flex;
+      gap: 2rem;
+    }
+    
+    .nav-button {
+      background-color: rgba(79, 70, 229, 0.8);
+      color: white;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+    }
+    
+    .nav-button:hover {
+      background-color: rgba(79, 70, 229, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.3);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .comparison-table th, .comparison-table td {
+      padding: 0.75rem 1rem;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+    }
+    
+    .comparison-table th {
+      background-color: #f9fafb;
+      font-weight: 600;
+    }
+    
+    .comparison-table tr:nth-child(even) {
+      background-color: #f9fafb;
+    }
+    
+    .comparison-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Slide 1: Title Slide -->
+  <div class="slide active-slide">
+    <div class="w-full h-full pfl-gradient flex flex-col justify-center items-center text-white px-12">
+      <div class="grid-pattern w-full h-full absolute inset-0 opacity-30"></div>
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <div class="flex justify-center items-center mb-6">
+          <div class="flex justify-center items-center h-20 w-20 rounded-lg bg-white text-indigo-600 font-bold text-4xl">
+            PFL
+          </div>
+        </div>
+        <h1 class="text-6xl font-bold mb-4">PFL Academy</h1>
+        <h2 class="text-3xl font-semibold mb-6">Financial Literacy for the Modern Student</h2>
+        <p class="text-xl text-indigo-100">Empowering students with the skills they need for life, not just graduation.</p>
+      </div>
+      <div class="slide-number">1/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 2: The Challenge -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">The Challenge</h2>
+        
+        <ul class="space-y-6">
+          <li class="flex items-center text-2xl">
+            <div class="h-3 w-3 rounded-full bg-indigo-600 mr-4 flex-shrink-0"></div>
+            <span class="text-gray-800">State mandates for financial literacy are growing rapidly</span>
+          </li>
+          <li class="flex items-center text-2xl">
+            <div class="h-3 w-3 rounded-full bg-indigo-600 mr-4 flex-shrink-0"></div>
+            <span class="text-gray-800">Most curricula are outdated, incomplete, or hard to implement</span>
+          </li>
+          <li class="flex items-center text-2xl">
+            <div class="h-3 w-3 rounded-full bg-indigo-600 mr-4 flex-shrink-0"></div>
+            <span class="text-gray-800">Teachers are under-resourced; students are disengaged</span>
+          </li>
+        </ul>
+        
+        <div class="mt-12 pt-8 border-t border-gray-200">
+          <div class="bg-indigo-50 py-4 px-6 rounded-lg">
+            <p class="text-lg text-gray-700 italic">Schools need a modern solution that truly prepares students for financial success.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number">2/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 3: The Solution -->
+  <div class="slide">
+    <div class="w-full h-full pfl-gradient flex flex-col justify-center items-center px-12">
+      <div class="grid-pattern w-full h-full absolute inset-0 opacity-30"></div>
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <h2 class="text-5xl font-bold mb-6">The Solution</h2>
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl inline-block mx-auto">
+          <p class="text-3xl font-semibold text-white">Introducing PFL Academy</p>
+          <p class="text-xl text-indigo-100 mt-4">A modern, standards-aligned, fully supported<br>personal finance curriculum.</p>
+        </div>
+      </div>
+      <div class="slide-number text-white">3/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 4: What Makes PFL Academy Different? -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">What Makes PFL Academy Different?</h2>
+        
+        <div class="grid grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">15 fully developed standards</h3>
+                <p class="text-gray-600">Comprehensive coverage from budgeting to investing</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Day 1: Direct Instruction</h3>
+                <p class="text-gray-600">Clear, engaging foundational concepts</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Day 2: Interactive Learning Labs</h3>
+                <p class="text-gray-600">Hands-on application of financial concepts</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Built-in assessments and reflections</h3>
+                <p class="text-gray-600">Meaningful evaluation of learning</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Integrated tech tools</h3>
+                <p class="text-gray-600">FAFSA simulator, budget planner, and more</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5"></path>
+              </svg>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">Career-focused approach</h3>
+                <p class="text-gray-600">Financial decisions in the context of career goals</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number">4/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 5: Student Engagement That Works -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Student Engagement That Works</h2>
+        
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+            <div class="bg-indigo-600 p-4 flex justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect>
+                <path d="M3 9h18"></path>
+                <path d="M9 21V9"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-World Case Studies</h3>
+              <p class="text-gray-600">Students tackle scenarios they'll actually face after graduation</p>
+            </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+            <div class="bg-indigo-600 p-4 flex justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Interactive Skill Builders</h3>
+              <p class="text-gray-600">Digital tools that develop practical financial abilities</p>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+            <div class="bg-indigo-600 p-4 flex justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">Portfolio Outputs</h3>
+              <p class="text-gray-600">Students build resources they can use long after graduation</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-8 bg-indigo-50 p-6 rounded-xl">
+          <p class="text-lg font-medium text-gray-800">
+            Students don't just learn about money — they build confidence in managing it.
+          </p>
+        </div>
+      </div>
+      <div class="slide-number">5/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Built for Teachers -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Built for Teachers</h2>
+        
+        <div class="grid grid-cols-1 gap-6">
+          <!-- Feature 1 -->
+          <div class="flex items-start bg-indigo-50 p-6 rounded-xl">
+            <div class="bg-white p-2 rounded-lg shadow-md mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-1">Full Teacher Guides</h3>
+              <p class="text-gray-700">Comprehensive support with pacing guidance, differentiation strategies, and detailed assessment recommendations</p>
+            </div>
+          </div>
+          
+          <!-- Feature 2 -->
+          <div class="flex items-start bg-indigo-50 p-6 rounded-xl">
+            <div class="bg-white p-2 rounded-lg shadow-md mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                <line x1="2" x2="22" y1="10" y2="10"></line>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-1">Plug-and-play Lesson Design</h3>
+              <p class="text-gray-700">Ready to implement lessons with no preparation required — just open and teach</p>
+            </div>
+          </div>
+          
+          <!-- Feature 3 -->
+          <div class="flex items-start bg-indigo-50 p-6 rounded-xl">
+            <div class="bg-white p-2 rounded-lg shadow-md mr-6">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+                <circle cx="9" cy="9" r="2"></circle>
+                <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-1">Easy LMS and Digital Integration</h3>
+              <p class="text-gray-700">Seamlessly works with Canvas, Google Classroom, and other common platforms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number">6/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Delivery Options -->
+  <div class="slide">
+    <div class="w-full h-full pfl-gradient flex flex-col justify-center items-center px-12">
+      <div class="grid-pattern w-full h-full absolute inset-0 opacity-30"></div>
+      <div class="relative z-10 max-w-5xl mx-auto">
+        <h2 class="text-4xl font-bold text-white mb-10 text-center">Delivery Options</h2>
+        
+        <div class="grid grid-cols-3 gap-8">
+          <!-- Option 1 -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
+            <div class="py-4 px-6 border-b border-white/20">
+              <h3 class="text-xl font-semibold text-white">Full Semester</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3 text-indigo-100">
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>90 hours</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Synchronous delivery</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Complete curriculum</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>All standards covered</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Option 2 -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
+            <div class="py-4 px-6 border-b border-white/20">
+              <h3 class="text-xl font-semibold text-white">Short-format</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3 text-indigo-100">
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>30–45 hours</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Asynchronous delivery</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Core concepts</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Key standards covered</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Option 3 -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg">
+            <div class="py-4 px-6 border-b border-white/20">
+              <h3 class="text-xl font-semibold text-white">Hybrid/Community</h3>
+            </div>
+            <div class="p-6">
+              <ul class="space-y-3 text-indigo-100">
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Flexible hours</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Partnership model</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>YMCA, Boys & Girls Club</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="h-2 w-2 rounded-full bg-white mr-3 flex-shrink-0"></div>
+                  <span>Customizable standards</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number text-white">7/10</div>
+    </div>
+  </div>
+
+  <!-- Slide 8: Comparison Snapshot -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Comparison Snapshot</h2>
+        
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Curriculum</th>
+              <th>Modern Tools</th>
+              <th>Differentiation</th>
+              <th>Career Integration</th>
+              <th>Portfolio Outputs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PFL Academy</td>
+              <td class="text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+              </td>
+              <td class="text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+              </td>
+              <td class="text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+              </td>
+              <td class="text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>Ramsey</td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>NGPF</td>
+              <td class="text-indigo-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+            </tr>
+            <tr>
+              <td>State Slides</td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+              <td class="text-red-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div class="mt-8 grid grid-cols-2 gap-8">
+          <div class="bg-indigo-50 p-5 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Only PFL Academy Delivers:</h3>
+            <ul class="text-gray-700 space-y-2">
+              <li class="flex items-center">
+                <div class="h-2 w-2 rounded-full bg-indigo-600 mr-3 flex-shrink-0"></div>
+                <span>Comprehensive coverage that aligns with state standards</span>
+              </li>
+              <li class="flex items-center">
+                <div class="h-2 w-2 rounded-full bg-indigo-600 mr-3 flex-shrink-0"></div>
+                <span>Modern, interactive tools that engage today's students</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="bg-indigo-50 p-5 rounded-xl">
+            <h3 class="font-bold text-gray-900 mb-2">Complete Financial Education:</h3>
+            <ul class="text-gray-700 space-y-2">
+              <li class="flex items-center">
+                <div class="h-2 w-2 rounded-full bg-indigo-600 mr-3 flex-shrink-0"></div>
+                <span>Teacher-friendly with detailed support materials</span>
+              </li>
+              <li class="flex items-center">
+                <div class="h-2 w-2 rounded-full bg-indigo-600 mr-3 flex-shrink-0"></div>
+                <span>Flexible implementation to suit any district needs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number">8/11</div>
+    </div>
+  </div>
+  
+  <!-- Slide 9: PFL Academy Advantages (NEW) -->
+  <div class="slide">
+    <div class="w-full h-full pfl-gradient flex flex-col justify-center items-center px-12">
+      <div class="grid-pattern w-full h-full absolute inset-0 opacity-30"></div>
+      <div class="relative z-10 max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-white mb-8 text-center">Integrated Platform Advantages</h2>
+        
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+          <table class="w-full text-white">
+            <thead>
+              <tr class="border-b-2 border-white/20">
+                <th class="text-left py-4 px-4 text-lg font-semibold">Feature</th>
+                <th class="text-left py-4 px-4 text-lg font-semibold">Competition</th>
+                <th class="text-left py-4 px-4 text-lg font-semibold">PFL Academy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-white/10">
+                <td class="py-3 px-4">Assessment System</td>
+                <td class="py-3 px-4">Manual grading<br>Limited feedback</td>
+                <td class="py-3 px-4 font-semibold">✅ AI-driven grading & feedback</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-3 px-4">Teacher Support</td>
+                <td class="py-3 px-4">Basic lesson plans<br>Static resources</td>
+                <td class="py-3 px-4 font-semibold">✅ Interactive support system<br>✅ Real-time assistance</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-3 px-4">Technology Integration</td>
+                <td class="py-3 px-4">Piecemeal solutions<br>Separate systems</td>
+                <td class="py-3 px-4 font-semibold">✅ Unified platform<br>✅ Seamless LMS integration</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-3 px-4">Instructional Flexibility</td>
+                <td class="py-3 px-4">One-size-fits-all<br>Limited differentiation</td>
+                <td class="py-3 px-4 font-semibold">✅ Multiple delivery models<br>✅ Configurable scaffolding</td>
+              </tr>
+              <tr class="border-b border-white/10">
+                <td class="py-3 px-4">Learning Experience</td>
+                <td class="py-3 px-4">Fragmented content<br>Inconsistent quality</td>
+                <td class="py-3 px-4 font-semibold">✅ Cohesive curriculum<br>✅ Guided progression</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">Student Outcomes</td>
+                <td class="py-3 px-4">Knowledge acquisition<br>Limited application</td>
+                <td class="py-3 px-4 font-semibold">✅ Portfolio creation<br>✅ Real-world skill development</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-8 text-center">
+          <p class="text-xl font-medium text-white">
+            Maximize instructional time, reduce administrative burden, and improve<br>
+            measurable student outcomes with a truly integrated educational solution.
+          </p>
+        </div>
+      </div>
+      <div class="slide-number text-white">9/11</div>
+    </div>
+  </div>
+
+  <!-- Slide 10: Ready for the Real World -->
+  <div class="slide">
+    <div class="w-full h-full bg-white flex flex-col justify-center items-center px-12">
+      <div class="max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl font-bold text-gray-900 mb-8">Ready for the Real World</h2>
+        
+        <div class="bg-indigo-50 p-8 rounded-xl">
+          <div class="grid grid-cols-2 gap-x-12 gap-y-8">
+            <div class="flex items-start">
+              <div class="bg-white p-3 rounded-lg shadow-md mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Complete Career Integration</h3>
+                <p class="text-gray-700">Financial decisions tied to career pathways and planning</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-white p-3 rounded-lg shadow-md mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3v3a2 2 0 0 1-2 2H3"></path>
+                  <path d="M21 8h-3a2 2 0 0 1-2-2V3"></path>
+                  <path d="M3 16h3a2 2 0 0 1 2 2v3"></path>
+                  <path d="M16 21v-3a2 2 0 0 1 2-2h3"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Gambling Risk Education</h3>
+                <p class="text-gray-700">Teaching responsible decision-making around an increasingly common activity</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-white p-3 rounded-lg shadow-md mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Credit & Fraud Protection</h3>
+                <p class="text-gray-700">Advanced strategies for building credit and preventing identity theft</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-white p-3 rounded-lg shadow-md mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900">Investment Fundamentals</h3>
+                <p class="text-gray-700">Practical introduction to market concepts and long-term wealth building</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8 text-center">
+            <p class="text-lg font-medium text-gray-900">
+              "PFL Academy covers topics that students will actually face — not just theoretical concepts."
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-number">10/11</div>
+    </div>
+  </div>
+
+  <!-- Slide 11: Let's Talk -->
+  <div class="slide">
+    <div class="w-full h-full pfl-gradient flex flex-col justify-center items-center px-12">
+      <div class="grid-pattern w-full h-full absolute inset-0 opacity-30"></div>
+      <div class="relative z-10 max-w-5xl mx-auto text-center">
+        <h2 class="text-5xl font-bold text-white mb-6">Let's Talk</h2>
+        <p class="text-2xl text-indigo-100 mb-10">Partner with us to bring personal finance to life in your district.</p>
+        
+        <div class="inline-block bg-white/10 backdrop-blur-sm p-8 rounded-xl">
+          <div class="flex justify-center items-center mb-6">
+            <div class="flex justify-center items-center h-16 w-16 rounded-lg bg-white text-indigo-600 font-bold text-2xl">
+              PFL
+            </div>
+          </div>
+          <h3 class="text-2xl font-semibold text-white mb-4">Justin Ghiglia</h3>
+          <p class="text-xl text-indigo-100 mb-2">
+            <a href="mailto:justin@pflacademy.org" class="hover:text-white transition-colors">justin@pflacademy.org</a>
+          </p>
+          <p class="text-xl text-indigo-100">
+            <a href="http://www.pflacademy.org" class="hover:text-white transition-colors">www.pflacademy.org</a>
+          </p>
+        </div>
+      </div>
+      <div class="slide-number text-white">11/11</div>
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="navigation">
+    <div class="nav-button" id="prev-slide">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="nav-button" id="next-slide">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      
+      // Navigation buttons
+      const prevButton = document.getElementById('prev-slide');
+      const nextButton = document.getElementById('next-slide');
+      
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+          slide.classList.remove('active-slide');
+        });
+        
+        // Show the selected slide
+        slides[index].classList.add('active-slide');
+        
+        // Update current slide
+        currentSlide = index;
+        
+        // Update button states
+        if (currentSlide === 0) {
+          prevButton.style.opacity = '0.5';
+          prevButton.style.cursor = 'not-allowed';
+        } else {
+          prevButton.style.opacity = '1';
+          prevButton.style.cursor = 'pointer';
+        }
+        
+        if (currentSlide === totalSlides - 1) {
+          nextButton.style.opacity = '0.5';
+          nextButton.style.cursor = 'not-allowed';
+        } else {
+          nextButton.style.opacity = '1';
+          nextButton.style.cursor = 'pointer';
+        }
+      }
+      
+      // Event listeners
+      prevButton.addEventListener('click', function() {
+        if (currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+      });
+      
+      nextButton.addEventListener('click', function() {
+        if (currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' && currentSlide > 0) {
+          showSlide(currentSlide - 1);
+        }
+        if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
+          showSlide(currentSlide + 1);
+        }
+      });
+      
+      // Initialize
+      showSlide(0);
+    });
+  </script>
+</body>
+</html>
